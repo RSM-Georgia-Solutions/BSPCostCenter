@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="No" SlientUpgrade="No" Partnernmsp="RSM" SchemaVersion="3.0" Type="" MultipleVersion="false" OnDemand="" OnPremise="" ExtName="BSPCostCenter Beta" ExtVersion="1.0" Contdata="nkurdadze@rsm.ge" Partner="RSM" DBType="Both" ClientType="A">
+<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="No" SlientUpgrade="No" Partnernmsp="RSM" SchemaVersion="3.0" Type="" MultipleVersion="false" OnDemand="" OnPremise="" ExtName="BSPCostCenter" ExtVersion="1.1" Contdata="nkurdadze@rsm.ge" Partner="RSM" DBType="Both" ClientType="A">
   <Validity>
     <SBOCompatibility>
       <Version From="900.000.00" To="940.000.00" />
@@ -18,12 +18,20 @@
   </Configuration>
   <Addons>
     <Addon Name="" Group="" ForceFlag="" Visible="" AutoAssign="" SelfUpgrd="">
-      <x86 AddonExe="" AddonSig="">
+      <x86 AddonExe="D:\Users\nkurdadze\Documents\Visual Studio 2015\Projects\BankStatementJournalEntryCostCenter\BankStatementJournalEntryCostCenter\bin\Debug\BankStatementJournalEntryCostCenter.exe" AddonSig="">
         <Installation>
-          <Files />
+          <Files>
+            <File FileName="BankStatementJournalEntryCostCenter.exe">
+              <Actions />
+            </File>
+          </Files>
         </Installation>
         <Uninstallation>
-          <Files />
+          <Files>
+            <File FileName="BankStatementJournalEntryCostCenter.exe">
+              <Actions />
+            </File>
+          </Files>
         </Uninstallation>
       </x86>
       <x64 AddonExe="D:\Users\nkurdadze\Documents\Visual Studio 2015\Projects\BankStatementJournalEntryCostCenter\BankStatementJournalEntryCostCenter\bin\Debug\BankStatementJournalEntryCostCenter.exe" AddonSig="">
