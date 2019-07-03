@@ -90,13 +90,17 @@ namespace BankStatementJournalEntryCostCenter
                 var externalCodeCell = ((ComboBox)matrix.GetCellSpecific("10000037", i)).Selected.Value;
                 var internalCodeCell = ((ComboBox)matrix.GetCellSpecific("10000035", i)).Selected.Value;
 
-                if (externalCodeCell == "PRL1" || internalCodeCell == "PMD - თანამშრ." || internalCodeCell == "PBS - 1430")
+                Recordset recSet =(Recordset)UIConnection.xCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+                recSet.DoQuery($"SELECT InOpCode FROM OBTC WHERE AbsEntry = N'{internalCodeCell}'");
+                var internalCode = recSet.Fields.Item("InOpCode").Value.ToString();
+
+                if (externalCodeCell == "PRL1" || internalCode == "PMD - თანამშრ." || internalCode == "PBS - 1430")
                 {
                     totalCount++;
                     int journalEntryTransId;
                     try
                     {
-                        journalEntryTransId = int.Parse(activeForm.DataSources.DBDataSources.Item(0).GetValue("JDTID", i), CultureInfo.InvariantCulture);
+                        journalEntryTransId = int.Parse(activeForm.DataSources.DBDataSources.Item(0).GetValue("JDTID", i-1), CultureInfo.InvariantCulture);
                     }
                     catch (Exception e)
                     {
@@ -109,7 +113,7 @@ namespace BankStatementJournalEntryCostCenter
                     {
                         employee = EmployeeController.Get(federalTaxIdCell);
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         hasNoEmployeeCount++;
                         continue;
